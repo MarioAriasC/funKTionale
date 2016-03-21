@@ -3,3 +3,6 @@
 target/*
 *.kte
 *.log
+.kobalt
+kobaltBuild
+
