@@ -35,4 +35,31 @@ class CollectionsTest {
         assertEquals(head, 1)
         assertEquals(tail, listOf(2, 3))
     }
+
+    @Test fun chunk() {
+        assertEquals(
+                listOf(1, 2, 3, 4, 5, 6, 7, 8, 9).chunk(3),
+                listOf(listOf(1, 2, 3), listOf(4, 5, 6), listOf(7, 8, 9))
+        )
+
+        assertEquals(
+                listOf(1, 2, 3, 4, 5, 6, 7, 8, 9).chunk(8),
+                listOf(listOf(1, 2, 3, 4, 5, 6, 7, 8), listOf(9))
+        )
+
+        assertEquals(
+                listOf(1, 2, 3, 4, 5, 6, 7, 8, 9).chunk(9),
+                listOf(listOf(1, 2, 3, 4, 5, 6, 7, 8, 9))
+        )
+
+        assertEquals(
+                listOf(1, 2, 3, 4, 5, 6, 7, 8, 9).chunk(20),
+                listOf(listOf(1, 2, 3, 4, 5, 6, 7, 8, 9))
+        )
+
+        assertEquals(
+                setOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 1, 2, 3, 4, 5, 6, 7, 8, 9).chunk(3),
+                listOf(listOf(1, 2, 3), listOf(4, 5, 6), listOf(7, 8, 9))
+        )
+    }
 }
