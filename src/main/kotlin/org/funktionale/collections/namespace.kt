@@ -30,7 +30,10 @@ infix fun <T> T.prependTo(list: List<T>): List<T> = listOf(this) + list
 
 fun <T> List<T>.destructured(): Pair<T, List<T>> = first() to tail()
 
-tailrec fun <T> Collection<T>.chunk(size: Int, initial: List<Collection<T>> = emptyList()): List<Collection<T>> {
-    val result = initial + listOf(this.take(size))
-    return if (this.size > size) this.drop(size).chunk(size, result) else result
+fun <T> List<T>.chunk(size: Int): List<List<T>> {
+    tailrec fun <T> List<T>._chunk(size: Int, initial: List<List<T>> = emptyList()): List<List<T>> {
+        val result = initial + listOf(this.take(size))
+        return if (this.size > size) this.drop(size)._chunk(size, result) else result
+    }
+    return this._chunk(size)
 }
