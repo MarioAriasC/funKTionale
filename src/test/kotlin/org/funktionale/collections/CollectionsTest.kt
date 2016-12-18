@@ -35,4 +35,10 @@ class CollectionsTest {
         assertEquals(head, 1)
         assertEquals(tail, listOf(2, 3))
     }
+
+    @Test fun chunk() {
+        assertEquals(listOf(1).chunk(2), listOf(listOf(1)))
+        assertEquals(listOf(1, 2).chunk(2), listOf(listOf(1, 2)))
+        assertEquals(listOf(1, 2, 3).chunk(2), listOf(listOf(1, 2), listOf(3)))
+    }
 }
