@@ -3,6 +3,9 @@ funKTionale
 
 Functional constructs and patterns for [Kotlin](http://kotlin-lang.org)
 
+*NOTE: Development of this project is frozen*, as it will eventually be made obsolete by 
+[Arrow](arrow-kt.io), which merges the functionality of funKTionale and [Kategory](https://github.com/47deg/kategory-intro). If you are not yet using funKTionale, we recommend you [start with Arrow](http://arrow-kt.io/docs/) instead.
+
 ## Modules
 
 | Module | Description | Internal Dependencies | Size(KB) |
