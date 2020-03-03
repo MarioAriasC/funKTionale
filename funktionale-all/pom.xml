@@ -125,9 +125,9 @@
                         </goals>
                         <configuration>
                             <artifactSet>
-                                <excludes>
-                                    <exclude>org.jetbrains.kotlin:*</exclude>
-                                </excludes>
+                                <includes>
+                                    <include>org/funktionale/**</include>
+                                </includes>
                             </artifactSet>
                         </configuration>
                     </execution>
